@@ -4,7 +4,8 @@ b = 10
 c = 20.22
 d = 0o123        # Octal
 e = 0xdeadbeef   # Hex
-f = 0b10011101   # Binary 
+f = 0b10011101   # Binary
+g = 4.2393e36   # scientific notation
 
 print("a, b, c", a, b, c)
 print("a + b", a + b)

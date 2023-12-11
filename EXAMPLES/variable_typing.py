@@ -1,4 +1,7 @@
-a = "123"
+a = "123" 
 b = 456
-result = a + b  # raises error due to incompatible types
+print(type(a), a)
+print(type(b), b)
+# result = a + b  # raises error due to incompatible types
+# print(result)
 
