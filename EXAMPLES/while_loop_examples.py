@@ -1,6 +1,8 @@
 
 print("Welcome to ticket sales\n")
 
+
+
 while True:  # Loop "forever"
     raw_quantity = input("Enter quantity to purchase (or q to quit): ")
     if raw_quantity == '':
