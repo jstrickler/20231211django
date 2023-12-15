@@ -25,7 +25,7 @@ SECRET_KEY = 'f%024yp4*yoz&jdb#d@i$7g8n209bm!q$#t7uhj=q6h-0^9sn5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'superheroes.apps.SuperheroesConfig',
-    # add your apps here:
-    # 'myapp.apps.MyappConfig',
 ]
 
 MIDDLEWARE = [

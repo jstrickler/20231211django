@@ -10,6 +10,10 @@ from . import viewsqueries
 
 app_name = 'superheroes'
 
+#  <pk:id>
+#  <int:value>
+#  <str:something>
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('hero/<str:hero_name>/', views.hero, name="hero"),
