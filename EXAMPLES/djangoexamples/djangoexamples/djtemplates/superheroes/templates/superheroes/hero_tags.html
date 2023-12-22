@@ -28,6 +28,15 @@
     <h3><li>{{ enemy }}</li></h3>
 {% endfor %}
 </ul>
+
+<h2>Powers:</h2>
+<ol>
+{% for power in hero.powers.all %}
+    <h3><li>{{ power }}</li></h3>
+{% endfor %}
+</ol>
+
+
 </div>
 
 {% comment "just some notes" %}

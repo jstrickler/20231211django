@@ -1,4 +1,8 @@
-import geometry as g
+import EXAMPLES.alpha.mathlib.geometry as g
+
+# import geometry
+# g = geometry
+# del geometry
 
 a1 = g.circle_area(8)
 a2 = g.rectangle_area(10, 12)

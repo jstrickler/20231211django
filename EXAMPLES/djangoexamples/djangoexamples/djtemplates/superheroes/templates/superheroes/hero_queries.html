@@ -5,10 +5,12 @@
 
 <dl>
 {% for query, result in query_pairs %}
-    <dt>{{ query }}</dt>
+    <dt>{{ query }}</dt>  {#  this is the query #}
+{% comment %}
     <dd>{{ result }}</dd>
     <br/>
-{% endfor %}
+{% endcomment %}
+    {% endfor %}
 </dl>
 
 {% endblock %}

@@ -59,6 +59,49 @@ print(f"person[:5]: {person[:5]}")
 
 print(f"person[0:5:2]: {person[0:5:2]}")
 
+print(f"cities: {cities}\n")
+
+# for VAR ... in ITERABLE:
+#    ...
+#    ...
+
+for city in cities:
+    print(city)
+print()
+
+s = "abc"
+for char in s:
+    print(char)
+print()
+
+
+person = ['Fred', 'Flintstone']
+print(f"person[0]: {person[0]}")
+print(f"person[1]: {person[1]}")
+
+first_name, last_name = person
+print(f"first_name: {first_name}")
+print(f"last_name: {last_name}")
+
+data = [('NC', 'Raleigh'), ('PA', 'Harrisburg'), ('MD', 'Annapolis')]
+
+for info in data:
+    print(info[0], info[1])
+print('-' * 60)
+
+for info in data:
+    state, capital = info
+    print(state, capital)
+print('-' * 60)
+
+for state, capital in data:
+    print(state, capital)
+
+
+
+
+
+
 
 
 

@@ -119,12 +119,18 @@ class CardDeck:
 
     def __eq__(self, other):
         return (
-            self._dealer_name == other.dealer
+            self.dealer_name == other.dealer_name
             and
-            self._cards == other._cards
+            set(self.cards) == set(other.cards)
         )
 
 if __name__ == '__main__':
-    d = CardDeck("Mary")
-    d.shuffle()
-    print(d.cards)
+    d1 = CardDeck("Mary")
+    d1.shuffle()
+    print(d1.cards)
+    d2 = CardDeck("Mary")
+    d2.shuffle()
+    d3 = CardDeck("Bob")
+    d3.shuffle()
+    print(d1 == d2)
+    print(d1 == d3)

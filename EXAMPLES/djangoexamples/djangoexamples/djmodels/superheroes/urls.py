@@ -8,4 +8,5 @@ app_name = "superheroes"
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('details/<str:hero_name>/', views.hero_details, name="details"),
 ]

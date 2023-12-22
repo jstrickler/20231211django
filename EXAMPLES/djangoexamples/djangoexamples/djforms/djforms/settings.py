@@ -26,7 +26,7 @@ SECRET_KEY = 'a0@3ywac+1!^^)_z03$mjsljm@wtjmvvz0**!aiyw95qzu*bb6'
 DEBUG = True  
 # DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'crispy_bootstrap4',
     'superheroes.apps.SuperheroesConfig',
     # add your apps here:
     # 'myapp.apps.MyappConfig',
@@ -69,6 +70,8 @@ if DEBUG:
 
 
 ROOT_URLCONF = 'djforms.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'  # enable crispy-bootstrap
 
 TEMPLATES = [
     {

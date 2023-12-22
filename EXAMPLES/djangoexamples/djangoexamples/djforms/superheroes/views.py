@@ -32,17 +32,20 @@ def demoform(request):
 
     if request.method == 'POST':  # if form is bound (i.e., filled in)
         form = DemoForm(request.POST)
-        if form.is_valid():
-            # if data is valid, show results page
-            context = {
-                    'page_title': 'Form Fields Results',
-                    'data': form.cleaned_data,
-            }
-            return render(request, 'superheroes/form_results.html', context)
+        if form.is_valid():  # passed validators and cleaners
+            if form.cleaned_data.get('demo_char') == 'Barbie':
+                invalid = True
+            else:
+                # if data is valid, show results page
+                context = {
+                        'page_title': 'Form Fields Results',
+                        'data': form.cleaned_data,
+                }
+                return render(request, 'superheroes/form_results.html', context)
         else:
             # show form with errors for correcting
             invalid = True
-    else:
+    else:  # request method is GET
         form = DemoForm() # unbound (not filled in) form
 
     # unless POST/valid, redraw form

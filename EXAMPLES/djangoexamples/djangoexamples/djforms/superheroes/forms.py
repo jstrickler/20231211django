@@ -12,15 +12,20 @@ class DemoForm(forms.Form):
     demo_boolean = forms.BooleanField(label="Do you love Python?")
     demo_char = forms.CharField(max_length=10, strip=True)
     demo_choice = forms.ChoiceField(choices=[(1, 'A'), (2, 'B'), (3, 'C')])
-    demo_date = forms.DateField(label="Date")
+    demo_date = forms.DateField(label="Date", required=True)
     demo_email = forms.EmailField(label="Electronic mail address:")
     demo_float = forms.FloatField(help_text="Please enter a floating point number")
-    demo_int1 = LittleIntegerField()
-    demo_int2 = LittleIntegerField()
-    demo_regex = forms.RegexField(regex=r'(?i)^a[a-z]{1,5}$')
+    demo_int1 = LittleIntegerField(label="First little int", initial=5)
+    demo_int2 = LittleIntegerField(label="Second little int")
+    demo_regex = forms.RegexField(regex=r'(?i)^a[a-z]{1,5}$', label="Str to validate")
     # submit = forms
 
+    # clean() for each field
+    #   .to_python()
+    #   .validate()   builtin validators
+    #   .run_validators()  user-defined validators
     # add clean functions here...
+
     def clean_demo_boolean(self):
         bool_value = self.cleaned_data['demo_boolean']
 #        raise forms.ValidationError("That is an invalid Boolean")
@@ -30,6 +35,9 @@ class DemoForm(forms.Form):
         choice = self.cleaned_data['demo_choice']
         return self.DEMO_CHOICES.get(choice)
 
+    # clean entire form
+    def clean(self):
+        pass 
 
 COLORS = 'green red blue purple orange'.split()
 COLOR_CHOICES = [(c.title(), c) for c in COLORS]
@@ -57,7 +65,7 @@ class HeroModel(forms.ModelForm):
         fields = ['name', 'real_name', 'city', 'secret_identity']
         labels = {
             'name': 'Hero Name',
-            'city': 'City where they hang out',
+#            'city': 'City',
         }
 
 

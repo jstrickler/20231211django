@@ -22,7 +22,7 @@ def hero_hard_way(request, hero_name):
         'secret_identity': hero.secret_identity,
     }
     t = get_template('superheroes/hero_basic.html')
-    page = t.render(data)
+    page = t.render(data)  # insert data into template
     return HttpResponse(page)
 
 def hero_easy_way(request, hero_name):

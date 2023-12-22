@@ -1,16 +1,19 @@
 {% extends "superheroes/superheroes_base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <h1>{{ page_title }}</h1>
 {% if invalid %}
 <div class="btn-warning">
-    Some fields need to be corrected
+    Some fields need to be corrected, dude
 </div>
 {% endif %}
 <form action="{% url 'superheroes:demoform' %}" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit"/>
+    <table>
+    {{ form | crispy }}
+    </table>
+    <input type="submit" value="PUSH"/>
 </form>
 
 {% endblock %}

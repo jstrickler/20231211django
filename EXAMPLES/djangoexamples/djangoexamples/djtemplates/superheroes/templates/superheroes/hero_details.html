@@ -1,5 +1,7 @@
 {% extends "superheroes/superheroes_base.html" %}
 
+{% block title %}{{ hero.name }}{% endblock %}
+
 {% block content %}
 
 <h1>{{ hero.name }}</h1>
@@ -8,6 +10,8 @@
 <h3>Powers: {{ hero.powers.all | join:", "}}</h3>
 <h3>Enemies: {{ hero.enemies.all | join:", " }}</h3>
 
-<a href="{% url 'superheroes:herourls' %}">Return to hero list</a>
+<p><a href="{% url 'superheroes:herourls' %}">Return to hero list</a></p>
+<p><a href="{% url 'superheroes:home' %}">Return to home page</a></p>
+
 {% endblock %}
 
